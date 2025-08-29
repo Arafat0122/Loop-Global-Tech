@@ -29,10 +29,6 @@ const Business = () => {
       whileInView="show"
       className="max-w-7xl mx-auto px-4 py-16 md:py-24 relative overflow-hidden"
     >
-      {/* Background decorative blobs */}
-      <div className="absolute -top-20 -left-10 w-72 h-72 rounded-full bg-blue-100/30 blur-3xl -z-10"></div>
-      <div className="absolute -bottom-20 -right-10 w-72 h-72 rounded-full bg-blue-200/20 blur-3xl -z-10"></div>
-
       {/* Header */}
       <motion.div variants={fadeIn('up', 0.3)} className="text-center mb-14">
         <motion.h2

@@ -19,11 +19,7 @@ const PurposeSection = () => {
   ];
 
   return (
-    <section id="about" className="w-full bg-gray-50 relative py-16 px-4 md:px-8 overflow-hidden">
-      {/* Decorative blurred background */}
-      <div className="absolute -top-20 -left-10 w-72 h-72 rounded-full bg-blue-100/30 blur-3xl z-0"></div>
-      <div className="absolute -bottom-20 -right-10 w-72 h-72 rounded-full bg-blue-200/20 blur-3xl z-0"></div>
-
+    <section id="about" className="w-full relative py-16 px-4 md:px-8 overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           variants={fadeIn("right", 0.2)}
