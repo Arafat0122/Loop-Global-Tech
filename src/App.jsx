@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <div>
-        <h3 className="text-center">Hexane IT</h3>
+        <h3 className="text-center">Loop Global Tech</h3>
       </div>
         
     </>

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { motion } from "framer-motion";
 import { fadeIn } from "../utils/motion";
+import { Link } from 'react-router';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,11 +23,13 @@ const Navbar = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100 shadow-sm"
+      className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100 shadow-sm max-w-7xl mx-auto"
     >
       <div className="w-full flex justify-between items-center container mx-auto px-4 sm:px-6 lg:px-8 md:h-20 h-16">
         <motion.div variants={fadeIn('right', 0.3)} className="cursor-pointer w-46">
-          <img src="/Loop_Global_Tech.png" alt="Logo" className="h-28 w-auto" />
+          <Link to={'/'}>
+            <img src="/Loop_Global_Tech.png" alt="Logo" className="h-28 w-auto" />
+          </Link>
         </motion.div>
 
         {/* Mobile Menu Button */}

@@ -36,11 +36,6 @@ const Feature = () => {
 
   return (
     <section id="services" className="py-16 md:py-24 container mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-
-      {/* Background Blobs */}
-      <div className="absolute -top-20 -left-10 w-72 h-72 rounded-full bg-blue-100/20 blur-3xl -z-10"></div>
-      <div className="absolute -bottom-20 -right-10 w-72 h-72 rounded-full bg-indigo-100/20 blur-3xl -z-10"></div>
-
       <motion.div variants={fadeIn('up', 0.3)} className='flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-24'>
 
         {/* Header */}
