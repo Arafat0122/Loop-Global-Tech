@@ -1,86 +1,80 @@
-import React from 'react'
+import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
+import { FiSearch, FiSettings, FiZap } from "react-icons/fi";
 
 const Business = () => {
   const features = [
     {
-      icon: "🔍", 
-      title: "Find out what you need",
-      description: "We present you a proposal and discuss nitty-gritty like"
+      icon: <FiSearch className="text-blue-600 w-8 h-8" />,
+      title: "Discover Your Needs",
+      description: "We present a detailed proposal and discuss all the essential aspects of your project."
     },
     {
-      icon: "⚙️",
-      title: "Work out the details", 
-      description: "Communication protocols apart from engagement models"
+      icon: <FiSettings className="text-blue-600 w-8 h-8" />,
+      title: "Refine the Details",
+      description: "We align workflows, communication protocols, and engagement models to ensure smooth operations."
     },
     {
-      icon: "🚀",
-      title: "We get to work fast",
-      description: "Protocols apart from engage models, pricing billing"
+      icon: <FiZap className="text-blue-600 w-8 h-8" />,
+      title: "Fast Execution",
+      description: "Rapid project execution with transparent pricing, billing, and a structured approach for results."
     }
-  ]
+  ];
 
   return (
-    <motion.section 
-    variants={fadeIn('up', 0.2)}
+    <motion.section
+      variants={fadeIn('up', 0.2)}
       initial="hidden"
       whileInView="show"
-      className="max-w-7xl mx-auto px-4 py-12 md:py-16"
+      className="max-w-7xl mx-auto px-4 py-16 md:py-24 relative overflow-hidden"
     >
-      <motion.div 
-        variants={fadeIn('up', 0.3)}
-        className="text-center mb-12"
-      >
-        <motion.h2 
-           variants={textVariant(0.2)}
-          className="text-3xl font-bold mb-4"
+      {/* Background decorative blobs */}
+      <div className="absolute -top-20 -left-10 w-72 h-72 rounded-full bg-blue-100/30 blur-3xl -z-10"></div>
+      <div className="absolute -bottom-20 -right-10 w-72 h-72 rounded-full bg-blue-200/20 blur-3xl -z-10"></div>
+
+      {/* Header */}
+      <motion.div variants={fadeIn('up', 0.3)} className="text-center mb-14">
+        <motion.h2
+          variants={textVariant(0.2)}
+          className="text-3xl md:text-4xl font-bold mb-4 text-gray-900"
         >
-          How can we help your business?
+          How We Empower Your Business
         </motion.h2>
-        <motion.p 
+        <motion.p
           variants={fadeIn('up', 0.4)}
-          className="text-gray-600"
+          className="text-gray-600 max-w-xl mx-auto text-lg"
         >
-          When you resell besnik, you build trust and increase
+          Partner with us to build trust, increase efficiency, and drive measurable growth.
         </motion.p>
       </motion.div>
-      
-      <motion.div 
-       variants={fadeIn('up', 0.5)}
-        className="grid grid-cols-1 md:grid-cols-3 gap-8"
-      >
+
+      {/* Feature Cards */}
+      <motion.div variants={fadeIn('up', 0.5)} className="grid grid-cols-1 md:grid-cols-3 gap-10">
         {features.map((feature, index) => (
-          <motion.div 
+          <motion.div
             key={index}
             variants={fadeIn('up', 0.3 * (index + 1))}
-            className="flex flex-col items-center p-6"
+            className="flex flex-col items-center p-6 rounded-xl bg-white shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer text-center"
           >
-            <motion.div 
-               variants={fadeIn('down', 0.4 * (index + 1))}
-              className="w-24 h-24 rounded-full mb-6 flex items-center justify-center" 
-              style={{ 
-                backgroundColor: index === 0 ? '#F1EFFD' : 
-                               index === 1 ? '#FFE7E7' : 
-                               '#FFF3E4'
-              }}
+            {/* Icon */}
+            <motion.div
+              variants={fadeIn('down', 0.4 * (index + 1))}
+              className={`w-20 h-20 flex items-center justify-center rounded-full mb-6 bg-blue-50`}
             >
-              <motion.div 
-                 variants={fadeIn('up', 0.5 * (index + 1))}
-                className="text-3xl"
-              >
-                {feature.icon}
-              </motion.div>
+              {feature.icon}
             </motion.div>
-            <motion.h3 
-               variants={textVariant(0.3)}
-              className="text-2xl font-medium mb-3"
+
+            {/* Title & Description */}
+            <motion.h3
+              variants={textVariant(0.3)}
+              className="text-xl md:text-2xl font-semibold mb-3 text-gray-900"
             >
               {feature.title}
             </motion.h3>
-            <motion.p 
+            <motion.p
               variants={fadeIn('up', 0.6 * (index + 1))}
-              className="text-gray-500 text-center"
+              className="text-gray-600"
             >
               {feature.description}
             </motion.p>
@@ -88,22 +82,20 @@ const Business = () => {
         ))}
       </motion.div>
 
-      <motion.div 
-        variants={fadeIn('up', 0.7)}
-        className="text-center mt-12"
-      >
-        <motion.button 
+      {/* CTA */}
+      <motion.div variants={fadeIn('up', 0.7)} className="text-center mt-14">
+        <motion.button
           variants={fadeIn('up', 0.8)}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="bg-lime-600 text-white cursor-pointer px-8 py-3 rounded-full font-medium hover:bg-lime-700 transition-colors relative"
+          className="bg-blue-600 text-white px-10 py-3 rounded-full font-medium hover:bg-blue-700 transition-all relative overflow-hidden"
         >
           <a href="#newsletter" className="relative z-10">Become a Partner</a>
-          <div className="absolute -z-10 w-full h-full rounded-full bg-lime-600/30 blur-xl top-0 left-0"></div>
+          <div className="absolute -z-10 w-full h-full rounded-full bg-blue-600/30 blur-xl top-0 left-0"></div>
         </motion.button>
       </motion.div>
     </motion.section>
-  )
-}
+  );
+};
 
-export default Business
+export default Business;
